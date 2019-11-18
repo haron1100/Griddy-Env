@@ -1,4 +1,28 @@
-from distutils.core import setup
+from setuptools import setup
+
+with open("README.md", 'r') as fh:
+    long_description = fh.read()
+    
+setup(
+    name = 'GriddyEnv',
+    version = '0.0.1',
+    description = 'Grid Environment for testing and teaching RL algorithms. Integrated into OpenAI Gym.',   # Give a short description about your library
+    long_description = long_description,
+    long_description_content_type = 'text/markdown'
+    py_modules=["__init__"],
+    package_dir={'':'GriddyEnv'},
+    classifiers=[
+    'License :: OSI Approved :: MIT License',   # Again, pick a license
+    'Operating System :: OS Independent',
+    'Programming Language :: Python :: 3',      #Specify which pyhton versions that you want to support
+    'Programming Language :: Python :: 3.4',
+    'Programming Language :: Python :: 3.5',
+    'Programming Language :: Python :: 3.6',
+  ],
+)
+
+
+'''from distutils.core import setup
 setup(
   name = 'GriddyEnv',         # How you named your package folder (MyLib)
   packages = ['GriddyEnv'],   # Chose the same as "name"
@@ -25,3 +49,4 @@ setup(
     'Programming Language :: Python :: 3.6',
   ],
 )
+'''

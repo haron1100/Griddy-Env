@@ -4,8 +4,8 @@ from gym import spaces, logger
 from gym.utils import seeding
 import numpy as np
 
-#from griddy_render import *
-from GriddyEnv.griddy_render import *
+from griddy_render import *
+#from GriddyEnv.griddy_render import *
 from gym.envs.classic_control import rendering
 
 class GriddyEnv(gym.Env):
