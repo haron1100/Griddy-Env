@@ -9,11 +9,11 @@ setup(
     description = 'Grid Environment for testing and teaching RL algorithms. Integrated into OpenAI Gym.',   # Give a short description about your library
     long_description = long_description,
     long_description_content_type='text/markdown',
-    py_modules=["__init__"],
-    package_dir={'':'GriddyEnv'},
     author = 'Haron Shams',                   # Type in your name
     author_email = 'hshams@hotmail.co.uk',      # Type in your E-Mail
     url = 'https://github.com/haron1100/Griddy-Env',   # Provide either the link to your github or to your website
+    py_modules=["__init__"],
+    package_dir={'':'GriddyEnv'},
     classifiers=[
     'License :: OSI Approved :: MIT License',   # Again, pick a license
     'Programming Language :: Python :: 3',      #Specify which pyhton versions that you want to support

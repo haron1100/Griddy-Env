@@ -1,0 +1,3 @@
+include *.txt
+include MANIFEST
+recursive-include GriddyEnv *.py
