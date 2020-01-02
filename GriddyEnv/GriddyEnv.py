@@ -60,6 +60,7 @@ class GriddyEnv(gym.Env):
         return [seed]
 
     def reset(self, random_goal=False):
+        self.n_steps=0
         state = np.full((len(self.OBJECT_TO_IDX), self.n_squares_height, self.n_squares_width), 0)
         if random_goal:
             agent_pos, goal_pos = np.random.choice(range(self.n_squares_height*self.n_squares_width), 2, replace=False)
@@ -77,6 +78,7 @@ class GriddyEnv(gym.Env):
 
     def step(self, action):
         assert self.action_space.contains(action), "%r (%s) invalid"%(action, type(action))
+        self.n_steps+=1
         goal_pos = list(zip(*np.where(self.state[0] == 1)))[0]
         agent_pos = list(zip(*np.where(self.state[2] == 1)))[0]
         
@@ -104,6 +106,9 @@ class GriddyEnv(gym.Env):
         #assign reward
         if not done:
             reward = 0
+            if self.n_steps>=1000:
+                self.steps_beyond_done = 0
+                done=True
         elif self.steps_beyond_done is None:
             # Just arrived at the goal
             self.steps_beyond_done = 0

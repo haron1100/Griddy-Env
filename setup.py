@@ -5,7 +5,7 @@ with open('README.md', 'r') as fh:
     
 setup(
     name = 'GriddyEnv',
-    version = '0.0.1',
+    version = '0.0.2',
     description = 'Grid Environment for testing and teaching RL algorithms. Integrated into OpenAI Gym.',   # Give a short description about your library
     long_description = long_description,
     long_description_content_type='text/markdown',
