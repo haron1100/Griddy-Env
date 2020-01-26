@@ -439,14 +439,6 @@ class GriddyEnvAnton(gym.Env):
                 track = rendering.Line((i*square_size_width, 0), (i*square_size_width, screen_height))
                 track.set_color(0,0,0)
                 self.viewer.add_geom(track)
-            #the agent
-            #self.agent = rendering.Image('robo.jpg', width=square_size_width/2, height=square_size_height/2)
-            l, r, t, b = -square_size_width/4, square_size_width/4, square_size_height/4, -square_size_height/4
-            self.agent = rendering.FilledPolygon([(l,b), (l,t), (r,t), (r,b)])
-            #self.agent = make_oval(width=square_size_width/2, height=square_size_height/2)
-            self.agenttrans = rendering.Transform()
-            self.agent.add_attr(self.agenttrans)
-            self.viewer.add_geom(self.agent)
             #the voids
             l, r, t, b = -square_size_width/2, square_size_width/2, square_size_height/2, -square_size_height/2
             self.voids = [ rendering.FilledPolygon([(l,b), (l,t), (r,t), (r,b)]) for i in \
@@ -456,6 +448,14 @@ class GriddyEnvAnton(gym.Env):
                 self.voids[i].set_color(0,0,1)
                 self.voids[i].add_attr(self.voidtrans[i])
                 self.viewer.add_geom(self.voids[i])
+            #the agent
+            #self.agent = rendering.Image('robo.jpg', width=square_size_width/2, height=square_size_height/2)
+            l, r, t, b = -square_size_width/4, square_size_width/4, square_size_height/4, -square_size_height/4
+            self.agent = rendering.FilledPolygon([(l,b), (l,t), (r,t), (r,b)])
+            #self.agent = make_oval(width=square_size_width/2, height=square_size_height/2)
+            self.agenttrans = rendering.Transform()
+            self.agent.add_attr(self.agenttrans)
+            self.viewer.add_geom(self.agent)
             #the goal
             self.goal = make_oval(width=square_size_width/4, height=square_size_height/4)
             self.goal.set_color(1,0,1)
