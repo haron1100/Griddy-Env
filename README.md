@@ -3,7 +3,6 @@
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
 Simple Grid World Environment for testing and teaching RL algorithms. Integrated into OpenAI Gym.
-Always looking for people to collab with and add features to the environment. Shoot me an email if you are interested! hshams@hotmail.co.uk
 
   - See if you can beat it!
 
@@ -33,8 +32,6 @@ $ pip3 install GriddyEnv
 ### Development
 
 Want to contribute? Great!
-
-Contact me! hshams@hotmail.co.uk
 
 
 ### Todos
